@@ -1,2 +1,166 @@
 -- Haskell Playground 1.0
+
+
+
+
+arithmetic_mean 2 3
+
+
+harmonic_mean 2 3
+
+
+
+max 2 3
+max 1.2 (-5)    -- Parentheses around -5 are essential
+max "123" "456" -- String is a member of Ord
+--max 1 "1"     -- Invalid
+
+signum (-3)
+signum (1 + 1)
+signum 0
+
+
+
+
+
+HS2_Fundamentals.pi
+
+
+
+circleArea 2
+
+
+circleArea' 4
+
+
+
+
+
+addMul 2 3
+
+
+means 2 3
+
+fst(1, 2)
+snd(1, 2)
+
+origin
+
+moveRight origin 2
+
+
+
+
+moveUp origin 3
+
+
+move (10, 15, "green") 2 3
+
+
+let cp :: ColourPoint
+    cp = (10, 15, "green")
+    
+move cp 2 3
+
+colourOfPoint cp
+
+
+-- Lists
+firstTenPrimes  = [2, 3, 5, 7, 11, 13, 17, 19, 23, 27]
+oneToTwenty = [1..20]
+
+let oddNumbers :: Int -> [Int]
+    oddNumbers maxNumber  = [1, 3..maxNumber]
+(oddNumbers 6) == [1, 3, 5]
+
+-- `:` prepend
+"ab" : "cd" :[] == ["ab", "cd"]
+'a' : "bcd"     == "abcd"
+--"abc" : 'd'   -- Error
+
+
+-- `++` Join lists 
+[4, 2, 3] ++ [3, 1, 2, 7] == [4, 2, 3, 3, 1, 2, 7]
+"ab" ++ "cd"    == 'a' : "bcd"
+
+
+-- `!!` Get element from list
+[0, 1, 2, 3] !! 2 == 2
+"Hello" !! 4      == 'o'
+
+
+-- head and tail
+--head []       -- Error
+head ["a"] == "a"
+head "a"   == 'a'
+tail ["a"] == []
+[] == ""
+--tail ["a"] == "" -- Error, which is kinda interesting
+
+
+-- length
+length []        == 0
+length ""        == 0
+length [""]      == 1
+length ([] : []) == 1
+
+
+-- elem
+elem 2 [0, 1, 2, 3]
+elem 'o' "Hello"
+
+-- sum, product, maximum, minimum
+sum [1..100]
+product [1..100]    -- High precision Integer
+product [1..100.0]  -- Double
+
+minimum ['a', 'A']          == 'A'
+minimum "Shawn"             == 'S'
+maximum ["Shawn", "Zhong"]  == "Zhong"
+
+
+-- Throw error
+error "Prelude.head: empty list" 
+
+let x = a + b where a = 1 ; b = 2
+let y = a + b where { a = 1 ; b = 2;;;;;;}
+x == y
+
+
+
+--Exercises 1
+let sort :: Ord a => a -> a -> (a, a)
+    sort x y | x <= y = (x, y)
+             | otherwise = (y, x)
 sort 2 3
+sort "Zhong" "Shawn"
+
+--Exercises 2
+let almostEqual :: Eq a => (a, a) -> (a, a) -> Bool
+    almostEqual (x1,y1) (x2, y2) 
+      | x1 == x2 && y1 == y2 || x1 == y2 && x2 == y1 = True 
+      | otherwise = False
+almostEqual (2, 3) (3, 2)
+almostEqual (2, 1) (3, 2)
+
+--Exercises 3
+let isLower :: Char -> Bool
+    isLower x | elem x ['a'..'z'] = True
+              | otherwise = False
+isLower 'a'
+isLower 'A'
+
+--Exercises 4
+let mangle "" = ""
+    mangle str = (tail str) ++ [head str]
+mangle "Hello"
+mangle "I"
+mangle ""
+
+--Exercises 5
+let divide :: Int -> Int -> Int
+    divide x y = length [0,x..y] - 1
+    
+divide 5 10 
+divide 5 8
+divide 3 10

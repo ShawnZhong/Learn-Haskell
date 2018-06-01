@@ -16,7 +16,7 @@ averagePair(10,20)  -- Legal, as desired
 
 
 
-let sum :: Num a => [a] -> a  -- Use let to define function in GHCi
+let sum :: Num a => [a] -> a  -- let has no return value? I think so...
     sum = foldl (+) 0         -- Indentation is important here
 sum [1..10] :: Int
 
@@ -32,6 +32,7 @@ show True             -- Convert Boolean `True` to String `True`
 show "True"           -- Get "\"True\""
 --(show True) == True -- Error, cannot compare String with Boolean
 --show inc            -- Error, inc is not an instance of `Show`
+
 
 
 --Exercises 1

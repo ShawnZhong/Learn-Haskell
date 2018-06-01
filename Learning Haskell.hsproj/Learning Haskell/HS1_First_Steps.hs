@@ -1,7 +1,7 @@
-module HS1_Fi1rst_Steps where
+module HS1_Fi1rst_Steps where -- Module definition
 
-inc :: Num a => a -> a      -- type signature
-inc x = x + 1               -- function equation
+inc :: Num a => a -> a      -- Type signature
+inc x = x + 1               -- Function equation
 
 exclaim :: String -> String
 exclaim sentence = sentence ++ "!"
