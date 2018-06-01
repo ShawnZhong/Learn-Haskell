@@ -13,5 +13,6 @@ executable LearningHaskell
         base -any
     default-language: Haskell2010
     other-modules:
+        HS3_Recursion
         HS2_Fundamentals
 

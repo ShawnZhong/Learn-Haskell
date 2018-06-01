@@ -16,7 +16,7 @@ averagePair(10,20)  -- Legal, as desired
 
 
 
-let sum :: Num a => [a] -> a  -- let has no return value? I think so...
+let sum :: Num a => [a] -> a  -- Use let to define function in GHCi
     sum = foldl (+) 0         -- Indentation is important here
 sum [1..10] :: Int
 

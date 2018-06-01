@@ -111,8 +111,8 @@ elem 'o' "Hello"
 
 -- sum, product, maximum, minimum
 sum [1..100]
-product [1..100]    -- High precision Integer
-product [1..100.0]  -- Double
+product [1..30]    -- High precision Integer
+product [1..30.0]  -- Double
 
 minimum ['a', 'A']          == 'A'
 minimum "Shawn"             == 'S'

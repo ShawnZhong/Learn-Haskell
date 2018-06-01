@@ -1,0 +1,117 @@
+-- Haskell Playground 1.0
+-- Compute the sum from 0 to n
+let natSum :: (Num a, Ord a) => a -> a
+    natSum 0 = 0
+    natSum n  | n > 0     = n + natSum (n - 1) 
+              | otherwise = error "natSum: Invalid Input!"  
+natSum 100 == 5050
+--natSum 1321.2321312   -- Error
+--natSum -1             -- Error
+
+
+
+-- Create a List of the same element x
+let repeatN :: Int -> a -> [a]
+    repeatN 0 x  = []
+    repeatN n x  = x : repeatN (n - 1) x
+repeatN 5 'a' == "aaaaa"
+
+
+
+-- Create a suffixes list
+let suffixes :: [a] -> [[a]]
+    suffixes []  = []
+    suffixes x = x : suffixes (tail x)
+suffixes "Shawn" == ["Shawn", "hawn", "awn", "wn", "n"]
+
+
+
+-- Square each element in a list
+let allSquares :: Num a => [a] -> [a]
+    allSquares [] = []
+    allSquares (x : xs) = x * x : allSquares xs
+allSquares [1..5] == [1, 4, 9, 16, 25]
+
+
+
+-- Convert to upper case
+import Data.Char
+let allToUpper :: String -> String
+    allToUpper []       = []
+    allToUpper (x : xs) = toUpper x : allToUpper xs
+
+
+
+-- Calculate the distance between a given point and a list of points
+type Point = (Int, Int)
+let distance :: Point -> Point -> Float
+    distance (x1, y1) (x2, y2) = sqrt(fromIntegral(x1 - x2) ^ 2 + fromIntegral(y1 - y2) ^ 2)
+let distancesFromPoint :: Point -> [Point] -> [Float]
+    distancesFromPoint point [] = []
+    distancesFromPoint point (p : ps) = distance point p : distancesFromPoint point ps
+distancesFromPoint (0,0) [(3,4), (5,12)] == [5.0, 13.0]
+
+
+
+-- Extract digits from a string
+let extractDigits :: String -> String
+    extractDigits []  = []
+    extractDigits (x : xs)
+      | isDigit   x = x : extractDigits xs
+      | otherwise   = extractDigits xs
+extractDigits "fh2sd1fa3s2jk31231" == "213231231"
+
+
+
+-- Calculate the product of a list
+let product :: Num a => [a] -> a
+    product []     = 1
+    product (x:xs) = x * product xs
+product [1, 2, 3, 4, 5] == 1 * 2 * 3 * 4 * 5
+
+
+
+-- Find the minimum element in a list
+let minList :: [Int] -> Int
+    minList []     = maxBound
+    minList (x:xs) = min x (minList xs)
+minList [-5, 2, 3] == -5
+minList []         == maxBound
+
+
+
+-- Concate two Strings
+let concat :: [a] -> [a] -> [a]
+    concat [] ys = ys
+    concat (x:xs) ys = x : (xs ++ ys)
+concat "Shawn" "Zhong" == "ShawnZhong"
+
+
+
+-- Flatten a nested list
+let flatten :: [[a]] -> [a]
+    flatten [] = []
+    flatten (xs:xss) = xs ++ (flatten xss)
+flatten [[5, 6, 2], [], [4, 2]] == [5, 6, 2, 4, 2]
+
+
+
+-- Put a element to the end of list
+let snoc :: a -> [a] -> [a]
+    snoc x xs = xs ++ [x]
+snoc 'a' ['d', 'e', 'f'] == "defa"
+
+
+
+-- Reverse a list
+let reverse :: [a] -> [a]
+    reverse []     = []
+    reverse (x:xs) = reverse xs ++ [x]
+reverse "Shawn" == "nwahS"
+
+
+-- Left Reduce
+let deductFromAccount :: Int -> [Int] -> Int
+    deductFromAccount balance []       = balance
+    deductFromAccount balance (d : ds) = deductFromAccount (balance - d) ds
+deductFromAccount 75645 [322, 434, 5343, 234] == 69312
