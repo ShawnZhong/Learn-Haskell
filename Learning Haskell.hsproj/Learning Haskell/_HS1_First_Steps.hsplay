@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+length ("Hello " ++ "World!")
+
+add 2 3
