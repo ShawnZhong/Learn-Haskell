@@ -1,4 +1,67 @@
 -- Haskell Playground 1.0
-length ("Hello " ++ "World!")
+putStrLn (exclaim "Welcome to Haskell") -- Print to console
 
-add 2 3
+inc 41
+
+exclaim "Haskell"
+
+
+average 10 20       -- Legal
+--average (10 20)   -- Illegal
+(average 10) 20     -- Legal, left associative of function application
+10 `average` 20     -- Legal, infix application
+averagePair(10,20)  -- Legal, as desired
+
+
+
+
+
+let sum :: Num a => [a] -> a  -- Use let to define function in GHCi
+    sum = foldl (+) 0         -- Indentation is important here
+sum [1..10] :: Int
+
+let incList = map (+1)
+incList [1..10]
+
+-- Infix and Prefix Application
+length ("Hello " ++ "World!")
+length ((++) "Hello " "World!")
+
+
+show True             -- Convert Boolean `True` to String `True`
+show "True"           -- Get "\"True\""
+--(show True) == True -- Error, cannot compare String with Boolean
+--show inc            -- Error, inc is not an instance of `Show`
+
+
+--Exercises 1
+--[Char] == String
+"a" :: [Char]
+"a" :: String
+'a' :: Char
+
+--Exercises 2
+let square :: Int -> Int
+    square x = x * x
+inc (square 5)
+square (inc 5)
+
+average 3 5
+average (inc 3) (inc 5)
+
+--Exercises 3
+square x = x * x --Num a => a -> a
+
+--Exercises 4
+square_1   = 0 -- Legal
+--1square  = 0 -- Illegal
+--Square   = 0 -- Illegal
+--square!  = 0 -- Illegal
+square'    = 0 -- Legal
+
+--Exercises 5
+showResult str = "The result is " ++ show str
+showResult 123
+
+showAreaOfCircle radius = "The area of a circle with radius " ++ show radius ++ "cm is about " ++ show (pi * radius ^ 2) ++ " cm^2"
+showAreaOfCircle 12.3
