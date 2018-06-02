@@ -15,4 +15,5 @@ executable LearningHaskell
     other-modules:
         HS3_Recursion
         HS2_Fundamentals
+        HS4_Spirals_Snowflakes_Trees_Recursion_in_Pictures
 
