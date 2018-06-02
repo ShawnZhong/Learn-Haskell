@@ -1,4 +1,4 @@
-# Learning Haskell [learn.hfm.io](http://learn.hfm.io/)
+# Learning Haskell @ [learn.hfm.io](http://learn.hfm.io/)
 
 Notes on [Learning Haskell](http://learn.hfm.io/) by [Gabriele Keller](https://twitter.com/gckeller) and [Manuel M T Chakravarty](https://twitter.com/TacticalGrace)
 
