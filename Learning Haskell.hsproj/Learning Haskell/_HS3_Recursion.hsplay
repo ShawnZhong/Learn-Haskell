@@ -26,6 +26,7 @@ suffixes "Shawn" == ["Shawn", "hawn", "awn", "wn", "n"]
 
 
 
+-- Mapping: applying an operation to every element of a list
 -- Square each element in a list
 let allSquares :: Num a => [a] -> [a]
     allSquares [] = []
@@ -53,6 +54,7 @@ distancesFromPoint (0,0) [(3,4), (5,12)] == [5.0, 13.0]
 
 
 
+-- Filtering: removing elements from a list
 -- Extract digits from a string
 let extractDigits :: String -> String
     extractDigits []  = []
@@ -63,6 +65,7 @@ extractDigits "fh2sd1fa3s2jk31231" == "213231231"
 
 
 
+-- Reductions: combining the elements of a list
 -- Calculate the product of a list
 let product :: Num a => [a] -> a
     product []     = 1
@@ -111,7 +114,155 @@ reverse "Shawn" == "nwahS"
 
 
 -- Left Reduce
+-- Subtract a list of numbers from a initial value
 let deductFromAccount :: Int -> [Int] -> Int
     deductFromAccount balance []       = balance
     deductFromAccount balance (d : ds) = deductFromAccount (balance - d) ds
 deductFromAccount 75645 [322, 434, 5343, 234] == 69312
+
+
+
+-- String to Int
+let stringToInt :: String -> Int
+    stringToInt str = stringToIntAcc 0 str where
+      stringToIntAcc :: Int -> String -> Int
+      stringToIntAcc acc [] = acc
+      stringToIntAcc acc (chr : restString) = stringToIntAcc (10 * acc + digitToInt chr) restString
+stringToInt "12345" == 12345
+
+
+
+-- Fast reverse using left association
+let fastReverse :: [a] -> [a]
+    fastReverse xs = reverseAcc [] xs where
+      reverseAcc list [] = list
+      reverseAcc list (x : xs) = reverseAcc (x : list) xs
+fastReverse "1234" == "4321"
+
+
+
+
+-- Sum from right to left, more efficient by using a constant amount of call stack memory
+let fastSum :: Num a => [a] -> a
+    fastSum xs = sumAcc 0 xs where
+      sumAcc :: Num a => a -> [a] -> a
+      sumAcc acc [] = acc
+      sumAcc acc (x : xs) = sumAcc (acc + x) xs
+fastSum [1..100] == 5050
+
+
+
+-- Two versions of sumEvenElems
+let sumEvenElems :: Integral a => [a] -> a
+    sumEvenElems xs = sum (filterEven xs) where
+      filterEven [] = []
+      filterEven (x : xs)
+        | even x    = x : filterEven xs
+        | otherwise = filterEven xs
+let sumEvenElems' :: Integral a => [a] -> a
+    sumEvenElems' [] = 0
+    sumEvenElems' (x : xs)
+      | even x    = x + sumEvenElems' xs
+      | otherwise = sumEvenElems' xs
+sumEvenElems [1..100] == sumEvenElems' [1..100]
+
+
+
+-- Two versions of sumOfSquareRoots
+let sumOfSquareRoots xs = sum (allSquareRoots (filterPositives xs)) where
+    allSquareRoots []     = []
+    allSquareRoots (x:xs) = sqrt x : allSquareRoots xs
+    filterPositives []    = []
+    filterPositives (x:xs)
+      | x > 0     = x : filterPositives xs
+      | otherwise = filterPositives xs 
+let sumOfSquareRoots' [] = 0
+    sumOfSquareRoots' (x:xs)
+      | x > 0     = sqrt x + sumOfSquareRoots' xs
+      | otherwise = sumOfSquareRoots' xs   
+sumOfSquareRoots [-1, -2, 4, 16] == sumOfSquareRoots [-1, -2, 4, 16]
+
+
+
+-- Calculate the closest point to a given point
+type Point = (Float, Float)
+
+let distance :: Point -> Point -> Float
+    distance (x1, y1) (x2, y2) = sqrt(dx * dx + dy * dy) where
+      dx = x1 - x2
+      dy = y1 - y2
+let closestOfTwo :: Point -> Point -> Point -> Point
+    closestOfTwo p p1 p2
+        | distance p p1 < distance p p2 = p1
+        | otherwise                     = p2 
+let closestPoint :: Point -> [Point] -> Point
+    closestPoint p0 [p] = p
+    closestPoint p0 (p: ps) = closestOfTwo p0 p (closestPoint p0 ps)
+closestPoint (0,0) [(3,4), (1,2), (5,6)] == (1,2)
+
+
+
+
+-- Exercise 1
+import Prelude hiding (length)
+let length :: [a] -> Int
+    length [] = 0
+    length (x:xs) = 1 + length xs
+length [] == 0
+length [1,2,3,4,5] == 5
+
+
+
+-- Exercise 2
+1:[2,3,4]       
+1:2:3:4:[]
+--[1,2,3]:[4..7]      -- `:` adds elements to the beginning of a list
+[1,2,3] ++ [4..7]       
+--1:['a','b']     
+"abc"++"cd"
+--"a":"bCc"           -- "a" itself is a list
+"a" ++ "bCc"
+--'a':'b'             -- 'b' is not a list
+'a':"b"
+--[1,4,7] ++ 4:[5:[]] -- 4:[5:[]] adds Int to a list of [[Int]]
+--[True,True:[]]      -- `,` is used as the spliter of the list   
+True:[True,False]
+
+
+
+-- Exercise 3
+let fact :: (Num a, Ord a) => a -> a
+    fact 0 = 1
+    fact n  | n > 0     = n * fact (n - 1) 
+            | otherwise = error "natSum: Invalid Input!"  
+fact 8 == 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8
+
+
+
+-- Exercise 4
+import Prelude hiding (enumFromTo)
+let enumFromTo :: (Eq a, Num a) => a -> a -> [a]
+    enumFromTo m n 
+      | m == n    = [m]
+      | otherwise =  m : enumFromTo (m + 1) n
+enumFromTo 2 4 == [2, 3, 4]
+
+
+
+-- Exercise 5
+let countOdds :: Integral a => [a] -> Int
+    countOdds [] = 0
+    countOdds (x : xs)
+      | odd x     = 1 + countOdds xs
+      | otherwise  = countOdds xs
+countOdds [1, 6, 9, 14, 16, 22] == 2
+
+
+
+-- Exercise 6
+let removeOdd :: Integral a => [a] -> [a]
+    removeOdd [] = []
+    removeOdd (x : xs)
+      | odd x     = removeOdd xs
+      | otherwise = x : removeOdd xs
+removeOdd [1, 4, 5, 7, 10] == [4, 10]
