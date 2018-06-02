@@ -1,6 +1,8 @@
-Notes on [Learning Haskell](http://learn.hfm.io/) by [Gabriele Keller](https://twitter.com/gckeller) and [Manuel M T Chakravarty](https://twitter.com/TacticalGrace)
 
-# Course Link
+
+# Learning Haskell http://learn.hfm.io/
+
+Notes on [Learning Haskell](http://learn.hfm.io/) by [Gabriele Keller](https://twitter.com/gckeller) and [Manuel M T Chakravarty](https://twitter.com/TacticalGrace)
 
 **The Basics of Haskell (We don’t assume anything — let’s start right at the beginning.)**
 
