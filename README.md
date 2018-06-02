@@ -1,6 +1,7 @@
 # Learning Haskell @ [learn.hfm.io](http://learn.hfm.io/)
 
-Notes on [Learning Haskell](http://learn.hfm.io/) by [Gabriele Keller](https://twitter.com/gckeller) and [Manuel M T Chakravarty](https://twitter.com/TacticalGrace)
+Notes on [Learning Haskell](http://learn.hfm.io/) by [Gabriele Keller](https://twitter.com/gckeller) and [Manuel M T Chakravarty](https://twitter.com/TacticalGrace).
+
 You can use [Haskell for Mac](http://haskellformac.com/) to open .hsproj files
 
 **The Basics of Haskell (We don’t assume anything — let’s start right at the beginning.)**
