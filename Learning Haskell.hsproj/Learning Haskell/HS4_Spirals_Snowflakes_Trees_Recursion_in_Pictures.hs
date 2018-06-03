@@ -101,3 +101,14 @@ fractalTree factor n line = fractalTree' n line where
         [p1,p2,p3,p4,_] = polygon 4 line
         r               = flipLine (scaleLine 0.5 (p3, p4))
         (_, p5)         = rotateLine (factor' * pi) r 
+        
+
+
+
+-- Exercises
+colouredFTree :: Float -> Int -> Colour -> Line -> Picture
+colouredFTree factor n color line = [(newColour, fractalTree factor n newLine)] where
+   newColour = if (n `mod` 3 == 0) then fade color else color
+   newLine   = scaleLine 1.2 line
+
+
