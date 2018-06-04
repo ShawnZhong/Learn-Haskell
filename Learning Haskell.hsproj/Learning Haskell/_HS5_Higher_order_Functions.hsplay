@@ -1,0 +1,10 @@
+-- Haskell Playground 1.0
+allSquares [1,2,3,4,5] == [1,4,9,16,25]
+
+allToUpper "Shawn" == "SHAWN"
+
+distancesFromPoint (0,0) [(3,4), (5,12)] == [5, 13]
+
+let average :: Fractional a => a -> a -> a
+    average x y = (x + y) / 2
+zipWith average [1, 2, 3] [4, 5, 6] == [2.5, 3.5, 4.5]
