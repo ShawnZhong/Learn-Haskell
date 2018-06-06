@@ -35,10 +35,21 @@ zipWith op []       _        = []
 zipWith op _        []       = []
 zipWith op (x : xs) (y : ys) = (x `op` y) : zipWith op xs ys
 
-
-
+average :: Fractional a => a -> a -> a
+average x y = (x + y) / 2
 
 
 
 
 -- filter
+filter :: (a -> Bool) -> [a] -> [a]
+filter p [] = []
+filter p (x : xs) | p x       = x : filter p xs
+                  | otherwise = filter p xs
+                  
+extractDigits :: String -> String
+extractDigits strings = filter isDigit strings
+
+
+
+-- Anonymous functions
