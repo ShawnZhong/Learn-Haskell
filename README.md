@@ -19,4 +19,4 @@ You can use [Haskell for Mac](http://haskellformac.com/) to open .hsproj files
 7. [More About Algebraic Data Types](http://learn.hfm.io/recursive_datatypes.html)
 8. [Expression Trees](http://learn.hfm.io/expressions.html)
 
-![Screenshot](Learning-Haskell.jpg)
+![Screenshot](Learning-Haskell.png)
