@@ -1,0 +1,28 @@
+-- Haskell Playground 1.0
+-- Exercises 1
+natSum 100 == 5050
+
+-- Exercises 2
+map (+1) [1,2,3]
+
+-- Exercies 4
+let magentaToWhite, toBlue1, toBlue2 :: Int -> Colour
+    magentaToWhite n = (127 + (18 - n) * 7, (18 - n) * 15, 255, 255)
+    toBlue1 n        = (255 - (16 - n) * 13, 255 - (16 - n) * 13, 214, 255)
+    toBlue2 n        = (51 + n * 8, 255 + 14 * n, 255, 255)
+
+line = ((400,400), (420,420))
+
+drawPicture 3 (spiralRays 150 magentaToWhite line)
+drawPicture 3 (spiralRays 150 toBlue1 line)
+drawPicture 3 (spiralRays 150 toBlue2 line)
+
+
+drawPicture 3 (spiralRays' 150 magentaToWhite line)
+
+
+
+
+
+
+

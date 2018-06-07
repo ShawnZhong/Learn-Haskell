@@ -1,0 +1,23 @@
+-- Haskell Playground 1.0
+drawPicture 2 (colouredFTree 0.5 12 green ((470,800), (360,800)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

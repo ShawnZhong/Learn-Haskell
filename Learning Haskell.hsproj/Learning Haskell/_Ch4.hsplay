@@ -131,41 +131,5 @@ drawPicture 2 [(green, fractalTree 0.5 12 ((470,800), (360,800)))]
 
 
 
-drawPicture 2 (colouredFTree 0.5 12 green ((470,800), (360,800)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
