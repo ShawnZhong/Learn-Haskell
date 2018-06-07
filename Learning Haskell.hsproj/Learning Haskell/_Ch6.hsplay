@@ -23,6 +23,7 @@ drawPicture 3 [dashedCircle, dottedCircle, solidCircle]
 
 
 
+
 drawPicture 3 [redEllipse, greenEllipse, blueEllipse]
 
 
@@ -34,7 +35,25 @@ drawPicture 3 (simpleEllipsePic 8)
 
 
 
+
 drawPicture 3 (simpleEllipsePic 60)
+
+
+
+
+
+drawPicture 3 (simplePolyPic 60)
+
+
+
+
+
+
+drawPicture 3 (simpleCirclePic 50)
+
+
+
+
 
 
 

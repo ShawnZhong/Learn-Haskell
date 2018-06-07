@@ -90,7 +90,7 @@ movePointN n (Vector vx vy) (Point x y) = Point (n * vx + x) (n * vy + y)
 
 data Colour = Colour Int Int Int Int deriving (Show, Eq)
 
-white, black, blue, red, green, orange, magenta :: Colour
+white, black, blue, red, green, orange, magenta, grey :: Colour
 white      = Colour 255  255 255 255
 black      = Colour   0    0   0 255
 blue       = Colour   0    0 255 255
@@ -99,7 +99,7 @@ green      = Colour  10  255  10 235
 yellow     = Colour  255 255   0 235
 magenta    = Colour 153    0 153 255
 orange     = Colour 254  154  46 255
-
+grey       = Colour 255 255 255 45
 
 
 
@@ -156,13 +156,23 @@ simpleEllipsePic n = map (\angle -> Ellipse (Point 400 400) 250 70 angle myGreen
   where
     myGreen = Colour 27 230 34 80
 
+simplePolyPic :: Float -> Picture 
+simplePolyPic n = map makePoly [0,n..400] where
+    makePoly n = Polygon [Point 0 800, Point (400 + n) (400 + n), 
+                          Point 800 0, Point (400 - n) (400 - n)] 
+                          grey Solid SolidFill
+
+
+simpleCirclePic :: Float -> Picture 
+simpleCirclePic n  = map makeCircle [0,n..400] where
+    makeCircle n = Circle (Point 400 400) n grey Solid SolidFill
 
 
 
 
 
 
-
+-- Transforming pictures
 
 
 
