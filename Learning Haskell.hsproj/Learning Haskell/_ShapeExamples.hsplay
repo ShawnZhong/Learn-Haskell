@@ -1,0 +1,28 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit hiding (Point, Vector, Line, Path)
+
+
+
+
+drawPicture 3 $ simpleEllipsePic 10
+
+
+
+
+
+
+
+
+
+let polygon n = Polygon [Point 0 400, Point 0 0, Point 400 0] green{opacityC = 15} Solid SolidFill
+let p = [Point 340 340, Point 380 360, Point 400 340, Point 420 360, 
+         Point 460 340, Point 440 380, Point 460 400, Point 440 420,
+         Point 460 460, Point 420 440, Point 400 460, Point 380 440,
+         Point 340 460, Point 360 420, Point 340 400, Point 360 380]
+
+let pl = Polygon p green Solid SolidFill          
+drawPicture 3 $[pl]
+
+
+
+

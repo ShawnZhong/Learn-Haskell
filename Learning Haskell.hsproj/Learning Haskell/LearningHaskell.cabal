@@ -16,14 +16,16 @@ executable LearningHaskell
     default-language: Haskell2010
     other-modules:
         Ch3
-        Ch2
         Ch4
         Ch1_Ex
-        Ch2_Ex
+        ShapeGraphics
         Ch6
+        LineGraphics
+        Ch5
+        Ch2
+        ShapeExamples
+        Ch2_Ex
         Ch5_Ex
         Ch3_Ex
         Ch4_Ex
-        LineGraphics
-        Ch5
 

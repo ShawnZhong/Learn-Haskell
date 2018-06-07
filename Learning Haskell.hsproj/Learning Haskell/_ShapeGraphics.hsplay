@@ -1,0 +1,7 @@
+-- Haskell Playground 1.0
+import Graphics.SpriteKit hiding (Point, Vector, Line, Path)
+
+
+drawPicture 16 [Circle (Point 400 400) 180 yellow Dashed NoFill, Circle (Point 400 400) 90 orange Dotted NoFill, Circle (Point 400 400) 20 red Dotted SolidFill]
+
+
