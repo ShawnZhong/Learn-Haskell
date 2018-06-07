@@ -1,4 +1,4 @@
-module Ch2 where       -- Module definition
+module Ch2_1 where       -- Module definition
   
 import Prelude hiding (max, signum) -- Hide default max and signum from Prelude
 

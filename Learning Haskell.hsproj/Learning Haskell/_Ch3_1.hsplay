@@ -1,0 +1,28 @@
+-- Haskell Playground 1.0
+natSum 100 == 5050
+--natSum 1321.2321312   -- Error
+--natSum -1             -- Error
+
+repeatN 5 'a' == "aaaaa"
+
+suffixes "Shawn" == ["Shawn", "hawn", "awn", "wn", "n"]
+
+
+
+
+
+
+
+
+-- Mapping
+allSquares [1..5] == [1, 4, 9, 16, 25]
+allToUpper "shawn" == "SHAWN"
+distancesFromPoint (0,0) [(3,4), (5,12)] == [5.0, 13.0]
+
+
+
+
+
+
+-- Filtering: removing elements from a list
+extractDigits "fh2sd1fa3s2jk31231" == "213231231"

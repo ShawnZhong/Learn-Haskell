@@ -14,11 +14,41 @@ let magentaToWhite, toBlue1, toBlue2 :: Int -> Colour
 line = ((400,400), (420,420))
 
 drawPicture 3 (spiralRays 150 magentaToWhite line)
+
+
+
+
+
+
+
+
+
+
 drawPicture 3 (spiralRays 150 toBlue1 line)
+
+
+
+
+
+
+
+
+
+
 drawPicture 3 (spiralRays 150 toBlue2 line)
 
 
+
+
+
+
+
+
+
+
 drawPicture 3 (spiralRays' 150 magentaToWhite line)
+
+
 
 
 

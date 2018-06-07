@@ -1,0 +1,40 @@
+-- Haskell Playground 1.0
+arithmetic_mean 2 3
+harmonic_mean 2 3
+
+
+
+max 2 3
+max 1.2 (-5)    -- Parentheses around -5 are essential
+max "123" "456" -- String is a member of Ord
+--max 1 "1"     -- Invalid
+
+signum (-3)
+signum (1 + 1)
+signum 0
+
+
+Ch2.pi
+
+
+
+circleArea 2
+circleArea' 4
+
+
+
+addMul 2 3
+means 2 3
+fst(1, 2)
+snd(1, 2)
+
+origin
+moveRight origin 2
+moveUp origin 3
+move (10, 15, "green") 2 3
+
+
+cp = (10, 15, "green") :: ColourPoint
+move cp 2 3
+
+colourOfPoint cp

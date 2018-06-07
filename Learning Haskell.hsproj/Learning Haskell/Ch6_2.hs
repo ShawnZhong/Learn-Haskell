@@ -1,74 +1,9 @@
-module Ch6 where
-
+module Ch6_2 where
+  
 import Graphics.Rasterific hiding (Point, Vector, Line, Path)
 import Graphics.Rasterific.Texture
 import Graphics.Rasterific.Transformations
 import Codec.Picture
-
--- Create a new data type called `LineStyle`
--- Solid, Dashed, Dotted are called the data constructors
--- Data constructors must start with an uppercase letter
-data LineStyle = Solid | Dashed | Dotted deriving (Show, Eq)
-
-type Line  = (Point, Point)
-type FancyLine = ((Float, Float), (Float, Float), LineStyle)
-
-myLine :: FancyLine
-myLine = ((0, 0), (1, 1), Dashed)
-
-changeLineStyle :: FancyLine -> LineStyle -> FancyLine
-changeLineStyle (x, y, _) newStyle = (x, y, newStyle)
-
-
-
-
-
-
-
-
--- Enumeration Types
-data Day =
-  Sunday | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday
-  deriving (Enum, Show, Eq, Ord)
--- include the new type Day into the standard type class Enum
--- [Monday .. Friday] == [Monday, Tuesday, Wednesday, Thursday, Friday]
-
-
-
-
-
-
-
--- Pattern matching and case expressions
-isWeekday :: Day -> Bool
-isWeekday Sunday   = False
-isWeekday Saturday = False
-isWeekday _        = True --If no pattern matches, evaluation raises a exception
-
--- Equivalent Syntaxs
-isWeekday' :: Day -> Bool
-isWeekday' day = case day of
-                  Sunday   -> False
-                  Saturday -> False
-                  _        -> True
-                  
-
-isWeekday'' :: Day -> Bool
-isWeekday'' day = case day of {Sunday -> False ; Saturday -> False; _ -> True}
-
-
-isWeekend :: Day -> Bool
-isWeekend day = day `elem` [Saturday, Sunday]
-
-
-
-
-
-
-
-
-
-
 
 -- Product Types as Parametrised Data Constructors
 data Point = Point Float Float deriving (Show, Eq)
@@ -88,8 +23,7 @@ movePointN :: Float -> Vector -> Point -> Point
 movePointN n (Vector vx vy) (Point x y) = Point (n * vx + x) (n * vy + y)
 
 
-data Colour = Colour Int Int Int Int deriving (Show, Eq)
-
+--data Colour = Colour Int Int Int Int deriving (Show, Eq)
 white, black, blue, red, green, orange, magenta, grey :: Colour
 white      = Colour 255  255 255 255
 black      = Colour   0    0   0 255
@@ -112,6 +46,9 @@ grey       = Colour 255 255 255 45
 -- Sum Types as Alternative Data Constructors
 
 data FillStyle = NoFill | SolidFill deriving (Eq, Show)
+
+data LineStyle = Solid | Dashed | Dotted deriving (Eq, Show)
+
 
 data PictureObject 
   = Path    [Point]                   Colour LineStyle 
@@ -173,11 +110,50 @@ simpleCirclePic n  = map makeCircle [0,n..400] where
 
 
 -- Transforming pictures
+movePoint :: Vector -> Point -> Point
+movePoint = movePointN 1
+
+movePictureObject :: Vector -> PictureObject -> PictureObject
+movePictureObject vector (Path points colour lineStyle)
+  = Path (map (movePoint vector) points) colour lineStyle
+movePictureObject vector (Circle center radius colour lineStyle fillStyle)
+  = Circle (movePoint vector center) radius colour lineStyle fillStyle
+movePictureObject vector (Ellipse center width height rotation colour lineStyle fillStyle)
+  = (Ellipse (movePoint vector center) width height rotation colour lineStyle fillStyle)
+movePictureObject vector (Polygon points colour lineStyle fillStyle)
+  = Polygon (map (movePoint vector) points) colour lineStyle fillStyle
+
+
+curves :: Picture
+curves
+  = map makeCircleSin  xvals ++
+    map makePolygonCos xvals ++
+    map makeEllipseSin xvals ++
+    map makePathCos    xvals
+  where
+    redCircle      = Circle  (Point 20 380) 10 red Solid SolidFill
+    greenEllipse   = Ellipse (Point 20 380) 5 30 0 green Solid SolidFill
+    whitePolygon   = Polygon [Point 20 380, Point 40 380, Point 40 420] white Solid SolidFill
+    bluePath       = Path    [Point 20 380, Point 40 380, Point 40 420] blue Solid 
+    xvals          = [0,10..780]
+    --
+    makeCircleSin  x = movePictureObject (Vector x $ 100 * sin (pi * x/200)) redCircle
+    makePolygonCos x = movePictureObject (Vector x $ 100 * cos (pi * x/200)) whitePolygon
+    makeEllipseSin x = movePictureObject (Vector x $ 250 * sin (pi * x/200)) greenEllipse
+    makePathCos    x = movePictureObject (Vector x $ 200 * cos (pi * x/200)) bluePath
 
 
 
 
 
+-- Records
+data Colour
+  = Colour { redC      :: Int
+           , greenC    :: Int
+           , blueC     :: Int
+           , opacityC  :: Int
+           }
+  deriving (Show, Eq)
 
 
 
@@ -228,3 +204,9 @@ drawPicture linewidth picture
 
     toColour (Colour a b c d) 
       = PixelRGBA8 (fromIntegral a) (fromIntegral b) (fromIntegral c) (fromIntegral d)
+
+
+
+
+
+

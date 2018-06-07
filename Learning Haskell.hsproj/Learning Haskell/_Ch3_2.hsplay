@@ -1,0 +1,15 @@
+-- Haskell Playground 1.0
+-- Reductions
+product [1, 2, 3, 4, 5] == 1 * 2 * 3 * 4 * 5
+
+
+minList [-5, 2, 3] == -5
+minList [] == maxBound
+
+concat "Shawn" "Zhong" == "ShawnZhong"
+
+flatten [[5, 6, 2], [], [4, 2]] == [5, 6, 2, 4, 2]
+
+snoc 'a' ['d', 'e', 'f'] == "defa"
+
+reverse "Shawn" == "nwahS"

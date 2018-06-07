@@ -1,0 +1,16 @@
+-- Haskell Playground 1.0
+-- Left Reduce
+deductFromAccount 75645 [322, 434, 5343, 234] == 69312
+
+stringToInt "12345" == 12345
+
+fastReverse "1234" == "4321"
+
+fastSum [1..100] == 5050
+
+sumEvenElems [1..100] == sumEvenElems' [1..100]
+
+
+sumOfSquareRoots [-1, -2, 4, 16] == sumOfSquareRoots [-1, -2, 4, 16]
+
+closestPoint (0,0) [(3,4), (1,2), (5,6)] == (1,2)

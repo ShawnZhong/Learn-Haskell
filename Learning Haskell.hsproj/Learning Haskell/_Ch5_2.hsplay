@@ -1,0 +1,75 @@
+-- Haskell Playground 1.0
+drawPicture 3 $ bluePolygons ((470,780), (370,780)) 22
+
+
+
+
+
+
+
+
+
+
+-- Higher-order Functions Provide Flexibility
+line = ((470,780), (370,780)) :: Line
+drawPicture 3 (fadedFTree 14 0.55 red line)
+
+
+
+
+
+
+
+
+
+
+
+drawPicture 3 (bleachedFTree 14 0.55 red line)
+
+
+
+
+
+
+
+
+
+
+
+
+drawPicture 3 (bleachedFTree 14 0.55 green line)
+
+
+
+
+
+
+
+
+
+
+
+
+
+drawPicture 3 (colouredFTree 14 (toggleFactor2 0.7) magentaToWhite ((470,780), (370,780)))
+
+
+
+
+
+
+
+
+
+-- Passing in constant function
+--drawPicture 3 (colouredFTree 14 (\_ -> 0.5) (\_ -> red) ((470,780), (370,780))) 
+drawPicture 3 (colouredFTree 14 (const 0.5) (const red) ((470,780), (370,780))) 
+
+
+
+
+
+
+
+
+

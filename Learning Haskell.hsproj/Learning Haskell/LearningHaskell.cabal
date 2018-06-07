@@ -15,17 +15,23 @@ executable LearningHaskell
         JuicyPixels -any
     default-language: Haskell2010
     other-modules:
-        Ch3
         Ch4
+        Ch3_3
         Ch1_Ex
+        Ch5_1
         ShapeGraphics
-        Ch6
         LineGraphics
-        Ch5
-        Ch2
+        Ch2_1
+        Ch5_2
+        Ch2_2
         ShapeExamples
         Ch2_Ex
+        Ch3_1
+        Ch3_2
         Ch5_Ex
         Ch3_Ex
         Ch4_Ex
+        Ch6_1
+        Ch6_2
+        Ch6_3
 

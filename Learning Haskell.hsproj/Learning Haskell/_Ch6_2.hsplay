@@ -1,12 +1,4 @@
 -- Haskell Playground 1.0
--- Enumeration Types
-[Monday .. Wednesday] == [Monday, Tuesday, Wednesday]
-
--- Pattern matching and case expressions
-isWeekday Sunday == False
-isWeekday Monday == True
-isWeekend Sunday == True
-
 
 -- Product Types as Parametrised Data Constructors
 movePointN 5 (Vector 1 3) (Point 0 0) == Point 5 15
@@ -19,12 +11,31 @@ drawPicture 3 [myPath]
 
 
 
+
+
+
+
+
+
+
 drawPicture 3 [dashedCircle, dottedCircle, solidCircle]
 
 
 
 
+
+
+
+
+
+
 drawPicture 3 [redEllipse, greenEllipse, blueEllipse]
+
+
+
+
+
+
 
 
 
@@ -36,7 +47,19 @@ drawPicture 3 (simpleEllipsePic 8)
 
 
 
+
+
+
+
+
+
 drawPicture 3 (simpleEllipsePic 60)
+
+
+
+
+
+
 
 
 
@@ -49,7 +72,27 @@ drawPicture 3 (simplePolyPic 60)
 
 
 
+
+
+
+
+
 drawPicture 3 (simpleCirclePic 50)
+
+
+
+
+
+
+
+
+
+
+
+drawPicture 3 curves
+
+
+
 
 
 

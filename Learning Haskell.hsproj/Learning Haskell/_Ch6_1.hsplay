@@ -1,0 +1,10 @@
+-- Haskell Playground 1.0
+-- Enumeration Types
+[Monday .. Wednesday] == [Monday, Tuesday, Wednesday]
+
+-- Pattern matching and case expressions
+isWeekday Sunday == False
+isWeekday Monday == True
+isWeekend Sunday == True
+
+
