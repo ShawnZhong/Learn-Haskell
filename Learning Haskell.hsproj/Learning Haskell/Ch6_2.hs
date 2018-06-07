@@ -145,7 +145,6 @@ curves
 
 
 
-
 -- Records
 data Colour
   = Colour { redC      :: Int
@@ -154,8 +153,6 @@ data Colour
            , opacityC  :: Int
            }
   deriving (Show, Eq)
-
-
 
 
 
@@ -204,9 +201,3 @@ drawPicture linewidth picture
 
     toColour (Colour a b c d) 
       = PixelRGBA8 (fromIntegral a) (fromIntegral b) (fromIntegral c) (fromIntegral d)
-
-
-
-
-
-

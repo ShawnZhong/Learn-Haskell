@@ -1,0 +1,50 @@
+-- Haskell Playground 1.0
+-- Exercise 1
+map (+1) [] == []
+map (+1) [1,2,3] == [2,3,4]
+
+
+-- Exercise 2
+nextDay Sunday
+
+
+
+-- Exercise 3
+calculateHandValue [Card Clubs 10, Card Clubs 10] == 20
+calculateHandValue [Card Clubs 13, Card Clubs 13] == 20
+calculateHandValue [Card Clubs 1, Card Clubs 13] == 21
+calculateHandValue [Card Clubs 1, Card Clubs 1] == 12
+
+
+-- Exercise 4
+drawPicture 3 $ simpleCirclePic 100
+
+
+
+
+
+
+
+
+
+
+
+drawPicture 3 $ sierpinski 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

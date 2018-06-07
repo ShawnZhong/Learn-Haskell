@@ -26,10 +26,10 @@ pi = 3.141592653589793              -- Used as Ch2.pi
 
 
 circleArea :: Floating a => a -> a
-circleArea radius     = Ch2.pi * radius * radius
+circleArea radius     = Ch2_1.pi * radius * radius
 
 circleArea' :: Floating a => a -> a
-circleArea' diameter  = Ch2.pi * radius * radius
+circleArea' diameter  = Ch2_1.pi * radius * radius
   where
     radius = diameter / 2.0         -- Local binding
     

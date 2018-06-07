@@ -1,0 +1,47 @@
+-- Haskell Playground 1.0
+magenta = Colour{redC = 153, blueC = 153, greenC = 0, opacityC = 130}
+
+magentaPoly = Polygon [Point 430 400, Point 500 420, Point 680 400, Point 500 380] magenta Solid SolidFill :: PictureObject
+      
+
+drawPicture 3 (rotatePic 30 magentaPoly)
+
+
+
+
+
+
+
+
+
+
+drawPicture 3 $ dynamicRotate magentaPoly (Point 300 300) (Vector 10 25) (pi/5) 40
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

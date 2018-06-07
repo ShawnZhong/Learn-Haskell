@@ -1,0 +1,15 @@
+-- Haskell Playground 1.0
+-- Data Constructors Versus Functions
+zeroX 2 == Point 0 2
+
+
+
+-- Record Puns and Wildcards
+greenComponent red == 0
+greenComponent' red == 0
+greenComponent'' red == 0
+
+
+
+green = Colour 0 255 0 252
+brightGreenOpacity green == 252
