@@ -22,7 +22,7 @@ signum x | x <  0     = -1
 
 
 pi :: Floating a => a               -- Constant binding
-pi = 3.141592653589793              -- Used as HS2_Fundamentals.pi
+pi = 3.141592653589793              -- Used as Ch2.pi
 
 
 circleArea :: Floating a => a -> a
