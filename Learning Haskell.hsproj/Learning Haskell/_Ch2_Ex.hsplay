@@ -1,0 +1,37 @@
+-- Haskell Playground 1.0
+--Exercises 1
+let sort :: Ord a => a -> a -> (a, a)
+    sort x y | x <= y = (x, y)
+             | otherwise = (y, x)
+sort 2 3
+sort "Zhong" "Shawn"
+
+--Exercises 2
+let almostEqual :: Eq a => (a, a) -> (a, a) -> Bool
+    almostEqual (x1,y1) (x2, y2) 
+      | x1 == x2 && y1 == y2 || x1 == y2 && x2 == y1 = True 
+      | otherwise = False
+almostEqual (2, 3) (3, 2)
+almostEqual (2, 1) (3, 2)
+
+--Exercises 3
+let isLower :: Char -> Bool
+    isLower x | elem x ['a'..'z'] = True
+              | otherwise = False
+isLower 'a'
+isLower 'A'
+
+--Exercises 4
+let mangle "" = ""
+    mangle str = (tail str) ++ [head str]
+mangle "Hello"
+mangle "I"
+mangle ""
+
+--Exercises 5
+let divide :: Int -> Int -> Int
+    divide x y = length [0,x..y] - 1
+    
+divide 5 10 
+divide 5 8
+divide 3 10

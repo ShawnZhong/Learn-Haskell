@@ -1,0 +1,67 @@
+-- Haskell Playground 1.0
+
+
+
+-- Exercise 1
+import Prelude hiding (length)
+let length :: [a] -> Int
+    length [] = 0
+    length (x:xs) = 1 + length xs
+length [] == 0
+length [1,2,3,4,5] == 5
+
+
+
+-- Exercise 2
+1:[2,3,4]       
+1:2:3:4:[]
+--[1,2,3]:[4..7]      -- `:` adds elements to the beginning of a list
+[1,2,3] ++ [4..7]       
+--1:['a','b']     
+"abc"++"cd"
+--"a":"bCc"           -- "a" itself is a list
+"a" ++ "bCc"
+--'a':'b'             -- 'b' is not a list
+'a':"b"
+--[1,4,7] ++ 4:[5:[]] -- 4:[5:[]] adds Int to a list of [[Int]]
+--[True,True:[]]      -- `,` is used as the spliter of the list   
+True:[True,False]
+
+
+
+-- Exercise 3
+let fact :: (Num a, Ord a) => a -> a
+    fact 0 = 1
+    fact n  | n > 0     = n * fact (n - 1) 
+            | otherwise = error "natSum: Invalid Input!"  
+fact 8 == 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8
+
+
+
+-- Exercise 4
+import Prelude hiding (enumFromTo)
+let enumFromTo :: (Eq a, Num a) => a -> a -> [a]
+    enumFromTo m n 
+      | m == n    = [m]
+      | otherwise =  m : enumFromTo (m + 1) n
+enumFromTo 2 4 == [2, 3, 4]
+
+
+
+-- Exercise 5
+let countOdds :: Integral a => [a] -> Int
+    countOdds [] = 0
+    countOdds (x : xs)
+      | odd x     = 1 + countOdds xs
+      | otherwise  = countOdds xs
+countOdds [1, 6, 9, 14, 16, 22] == 2
+
+
+
+-- Exercise 6
+let removeOdd :: Integral a => [a] -> [a]
+    removeOdd [] = []
+    removeOdd (x : xs)
+      | odd x     = removeOdd xs
+      | otherwise = x : removeOdd xs
+removeOdd [1, 4, 5, 7, 10] == [4, 10]

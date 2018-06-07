@@ -1,4 +1,4 @@
-module HS2_Fundamentals where       -- Module definition
+module Ch2 where       -- Module definition
   
 import Prelude hiding (max, signum) -- Hide default max and signum from Prelude
 
@@ -26,10 +26,10 @@ pi = 3.141592653589793              -- Used as HS2_Fundamentals.pi
 
 
 circleArea :: Floating a => a -> a
-circleArea radius     = HS2_Fundamentals.pi * radius * radius
+circleArea radius     = Ch2.pi * radius * radius
 
 circleArea' :: Floating a => a -> a
-circleArea' diameter  = HS2_Fundamentals.pi * radius * radius
+circleArea' diameter  = Ch2.pi * radius * radius
   where
     radius = diameter / 2.0         -- Local binding
     

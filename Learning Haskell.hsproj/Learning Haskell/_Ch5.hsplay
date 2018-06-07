@@ -1,0 +1,52 @@
+-- Haskell Playground 1.0
+---- map
+--allSquares [1,2,3,4,5] == [1,4,9,16,25]
+--allToUpper "Shawn" == "SHAWN"
+--distancesFromPoint (0,0) [(3,4), (5,12)] == [5, 13]
+--
+--
+---- zipWith
+--zipWith average [1, 2, 3] [4, 5, 6] == [2.5, 3.5, 4.5]
+--
+--
+--
+---- filter
+--extractDigits("S1H2W3") == "123"
+--inRadius (0, 0) 5 [(1,2), (3,4), (5, 12)] == [(1,2), (3,4)]
+--
+--
+--
+---- Anonymous functions
+--inRadius' (0, 0) 5 [(1,2), (3,4), (5, 12)] == [(1,2), (3,4)]
+--allSquares' [1,2,3,4,5] == [1,4,9,16,25]
+--
+--
+----Point-free notation
+--inRadius'' (0, 0) 5 [(1,2), (3,4), (5, 12)] == [(1,2), (3,4)]
+--allSquares'' [1,2,3,4,5] == [1,4,9,16,25]
+--
+--
+---- foldr
+--minList [1,2,3,4,5] == 1
+--sum [1,2,3,4,5] == 15
+--allEven [2,4,6,8,10] == True
+--allEven [1,2,4,6,8,10] == False
+--concat ["Shawn","Zhong"] == "ShawnZhong"
+--reverse "abc" == "cba"
+--
+---- foldl
+--deductFromAccount 10 [1,2,3] == 4
+--stringToInt "12345" == 12345
+--fastReverse "abc" == "cba"
+--
+---- Combining Multiple Recursive Patterns
+--sumOfSquareRoots [1,4,9] == 6
+--
+---- Function application with lower precedence
+--sumOfSquareRoots' [1,4,9] == 6
+--
+---- Function composition
+--sumOfSquareRoots'' [1,4,9] == 6
+--
+--
+--drawPicture 3 $ bluePolygons ((470,780), (370,780)) 22

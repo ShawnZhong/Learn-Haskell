@@ -1,0 +1,36 @@
+-- Haskell Playground 1.0
+--Exercises 1
+--Note: [Char] == String
+"a" :: [Char]
+"a" :: String
+'a' :: Char
+
+--Exercises 2
+let inc :: Num a => a -> a
+    inc x = x + 1
+let square :: Int -> Int
+    square x = x * x
+let average :: Float -> Float -> Float
+    average      a  b  = (a + b) / 2
+inc (square 5)
+square (inc 5)
+
+average 3 5
+average (inc 3) (inc 5)
+
+--Exercises 3
+square x = x * x --Num a => a -> a
+
+--Exercises 4
+square_1   = 0 -- Legal
+--1square  = 0 -- Illegal
+--Square   = 0 -- Illegal
+--square!  = 0 -- Illegal
+square'    = 0 -- Legal
+
+--Exercises 5
+showResult str = "The result is " ++ show str
+showResult 123
+
+showAreaOfCircle radius = "The area of a circle with radius " ++ show radius ++ "cm is about " ++ show (pi * radius ^ 2) ++ " cm^2"
+showAreaOfCircle 12.3

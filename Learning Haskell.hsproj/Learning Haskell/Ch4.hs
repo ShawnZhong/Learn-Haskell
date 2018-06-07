@@ -1,4 +1,4 @@
-module HS4_Spirals_Snowflakes_Trees_Recursion_in_Pictures where 
+module Ch4 where 
 
 -- needed to display the picture in the playground
 import Codec.Picture
