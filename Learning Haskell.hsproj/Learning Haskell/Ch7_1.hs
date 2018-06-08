@@ -47,18 +47,3 @@ data Maybe a = Just a | Nothing    -- This is a a parametric version of MaybeInt
 
 
 
--- List
-data List a = Cons a (List a) | Nil
-
-isElement :: Eq a => a -> [a] -> Bool
-isElement _ []     = False
-isElement a (x:xs)
-  | a == x         = True
-  | otherwise      = isElement a xs
-
-
-
-
-
-
---  Binary Trees

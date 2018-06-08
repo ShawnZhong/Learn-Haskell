@@ -1,0 +1,59 @@
+-- Haskell Playground 1.0
+-- List
+1 `Cons` (2 `Cons` (3 `Cons` (4 `Cons` Nil)))
+Cons 1 (Cons 2 (Cons 3 (Cons 4 Nil)))
+
+isElement 3 [1,2,3] == True
+isElement 10 [1,2,3] == False
+
+
+isElementSorted 5 [1,3,5,6] == True
+isElementSorted 10 [1,3,5,6] == False
+
+insertSorted 3 [1,2,4,5] == [1,2,3,4,5]
+
+
+
+
+-- Binary Trees
+tree = Node 5 (Node 6 Leaf Leaf) Leaf
+drawPicture 3 $ renderTree $ tree
+
+
+
+
+
+
+
+
+
+
+drawPicture 3 $ renderTree $ insertTree 10 tree
+
+
+
+
+
+
+
+
+
+isElementTree 5 tree == True
+isElementTree 9 tree == False
+
+
+
+listToTree [1,2,6,3,5]
+drawPicture 3 $ renderTree $ listToTree [7,1,2,6,3,5]
+
+
+
+
+
+
+
+
+
+
+-- New Types
+--Celsius 0 == Fahrenheit 0 -- Type mismatch

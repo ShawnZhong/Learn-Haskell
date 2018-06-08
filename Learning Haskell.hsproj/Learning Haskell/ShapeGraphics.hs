@@ -8,15 +8,17 @@ module ShapeGraphics (
   LineStyle (..), 
   FillStyle (..), 
   PictureObject(..),
-  white, black, blue, red, green, yellow, magenta, orange
+  white, black, blue, red, green, yellow, magenta, orange,
+  movePicture
 ) where
  
   -- Rasterific
 import Graphics.Rasterific hiding (Point, Vector, Line, Path)
 import Graphics.Rasterific.Texture
 import Graphics.Rasterific.Transformations
-
-
+import Graphics.Text.TrueType( loadFontFile )
+import Codec.Picture( PixelRGBA8( .. ), writePng )
+import System.IO.Unsafe
  
 import Codec.Picture
  
@@ -97,12 +99,17 @@ data PictureObject
     , lineStylePO :: LineStyle
     , fillStylePO :: FillStyle 
     }
+  | TextBox 
+    { centerPO    :: Point
+    , colourPO    :: Colour
+    , textPO      :: String
+    , sizePO      :: Float
+    }
 
 type Picture = [PictureObject]
 
-
 drawPicture linewidth picture 
-  = renderDrawing  800 800 (toColour (Colour 0 0 0 255)) $ do
+  = renderDrawing  1000 1000 (toColour (Colour 255 255 255 255)) $ do
       { mapM drawObj picture
       ; return ()
       }
@@ -140,8 +147,37 @@ drawPicture linewidth picture
          $ style fillStyle lineStyle
          $ polygon 
          $ map (\((Point x y)) -> V2 x y) points
-           
+    drawObj (TextBox (Point px py) textColour text textSize) = 
+      texture textColour $
+                      printTextAt font (PointSize textSize) (V2 px py)
+                           text
 
     toColour (Colour a b c d) 
       = PixelRGBA8 (fromIntegral a) (fromIntegral b) (fromIntegral c) (fromIntegral d)
 
+{-# NOINLINE font #-}
+font 
+  = let 
+   fontErr = unsafePerformIO $ loadFontFile "/Library/Fonts/Trebuchet MS.ttf"
+    in case fontErr of
+          Left err -> error "font not available"
+          Right f  -> f
+
+movePoint :: Vector -> Point -> Point
+movePoint (Vector xv yv) (Point xp yp)
+ = Point (xv + xp) (yv + yp)
+
+movePicture :: Vector -> Picture -> Picture
+movePicture vec = map (movePictureObject vec)
+
+movePictureObject :: Vector -> PictureObject -> PictureObject
+movePictureObject vec picObj@(Path _ _ _) 
+  = picObj {pointsPO = map (movePoint vec) $ pointsPO picObj}
+movePictureObject vec picObj@(Polygon _ _ _ _) 
+  = picObj {pointsPO = map (movePoint vec) $ pointsPO picObj}
+movePictureObject vec picObj@(Circle _ _ _ _ _)
+  = picObj {centerPO = movePoint vec $ centerPO picObj}
+movePictureObject vec picObj@(Ellipse _ _ _ _ _ _ _)
+  = picObj {centerPO = movePoint vec $ centerPO picObj}
+movePictureObject vec picObj@(TextBox _ _ _ _)
+  = picObj {centerPO = movePoint vec $ centerPO picObj}

@@ -19,16 +19,3 @@ showFifthElement' [1, 2, 3, 4] == "there is no fifth element in this list"
 
 
 
--- List
-1 `Cons` (2 `Cons` (3 `Cons` (4 `Cons` Nil)))
-Cons 1 (Cons 2 (Cons 3 (Cons 4 Nil)))
-
-isElement 3 [1,2,3] == True
-isElement 4 [1,2,3] == False
-
-
-
-
-
-
--- Binary Trees
