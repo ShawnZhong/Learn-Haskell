@@ -1,0 +1,34 @@
+-- Haskell Playground 1.0
+showFifthElement [1, 2, 3, 4, 5] == "the fifth element of the list is: 5"
+showFifthElement [1, 2, 3, 4] == "there is no fifth element in this list"
+
+
+showFifthElement' [1, 2, 3, 4, 5] == "the fifth element of the list is: 5"
+showFifthElement' [1, 2, 3, 4] == "there is no fifth element in this list"
+
+
+[1,2] !+! 3 -- Nothing
+[1,2] !+! 1 -- Just 2 
+
+
+
+
+
+
+
+
+
+
+-- List
+1 `Cons` (2 `Cons` (3 `Cons` (4 `Cons` Nil)))
+Cons 1 (Cons 2 (Cons 3 (Cons 4 Nil)))
+
+isElement 3 [1,2,3] == True
+isElement 4 [1,2,3] == False
+
+
+
+
+
+
+-- Binary Trees
