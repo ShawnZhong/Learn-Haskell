@@ -1,0 +1,41 @@
+-- Haskell Playground 1.0
+-- Lexing
+lexer "2 + 7 * 13" -- IntTok 2, PlusTok, IntTok 7, TimesTok, IntTok 13
+
+
+
+-- Parsing 
+parseInt $ lexer "123"
+
+
+parseSumOrProdOrInt $ lexer "1 + 2 * 3"
+
+
+
+
+parseSumOrProdOrInt $ lexer "1 * 2 + 3"
+
+
+
+
+parseIntOrParenExpr $ lexer "(123)"
+
+
+parseProdOrIntOrParenExpr $ lexer "(123) * (123)"
+
+
+
+parseSumOrProdOrIntOrParenExpr $ lexer "1 * (2 + 3)"
+
+
+drawPicture 2 $ movePicture (Vector 300 280) $ renderExpr $ parse $ lexer "1 + 2 * (2 + 3)"
+
+
+
+
+
+
+
+-- Evaluator
+
+(eval $ parse $ lexer "1 + 2 * (2 + 3)") == (1 + 2 * (2 + 3))

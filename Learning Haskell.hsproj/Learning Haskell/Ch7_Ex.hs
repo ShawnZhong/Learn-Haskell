@@ -60,15 +60,12 @@ deleteTree :: Ord a => a -> BinaryTree a -> BinaryTree a
 deleteTree x Leaf = Leaf
 deleteTree x n@(Node v Leaf Leaf)
   | x == v    = Leaf
-  | otherwise = n
 deleteTree x n@(Node v Leaf r)
   | x == v    = r
   | x > v     = Node v Leaf (deleteTree x r)
-  | otherwise = n
 deleteTree x n@(Node v l Leaf)
   | x == v    = l
   | x < v     = Node v (deleteTree x l) Leaf
-  | otherwise = n
 deleteTree x n@(Node v l r)
   | x == v    = Node (findSmallestTree r) l (deleteSmallestTree r)
   | x < v     = Node v (deleteTree x l) r

@@ -8,7 +8,7 @@ module ShapeGraphics (
   LineStyle (..), 
   FillStyle (..), 
   PictureObject(..),
-  white, black, blue, red, green, yellow, magenta, orange,
+  white, black, blue, red, green, yellow, magenta, orange, grey,
   movePicture
 ) where
  
@@ -32,7 +32,8 @@ data Colour
   deriving (Show, Eq)
  
 white      = Colour 255  255 255 255
-black      = Colour   0    0   0 255
+black      = Colour  125 125 125 255
+grey      = Colour   0    0   0 255
 blue       = Colour   0    0 255 255
 red        = Colour 255    0   0 255
 green      = Colour  10  255  10 235
