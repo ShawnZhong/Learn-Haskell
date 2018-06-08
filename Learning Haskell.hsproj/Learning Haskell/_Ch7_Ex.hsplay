@@ -1,0 +1,83 @@
+-- Haskell Playground 1.0
+-- Exercise 1 
+
+safeHead []       -- Nothing
+safeHead [1,2,3]  -- Just 1
+
+safeTail []       -- Nothing
+safeTail [1]      -- Just []
+safeTail [1,2,3]  -- Just [2,3]
+
+
+-- Exercise 2
+myLength [1,2,3] == 3
+
+
+
+-- Exercise 3
+deleteSorted 3 [1,2,3,4] == [1,2,4]
+
+
+-- Exercise 4
+drawPicture 3 $ renderTree $ deleteSmallestTree $ listToTree [4,2,3,1]
+
+
+
+
+
+
+
+
+
+
+-- Exercise 5
+(treeToList $ listToTree [4,0,2,5,3,1]) == [0,1,2,3,4,5]
+
+
+
+
+
+
+
+-- Exercise 6
+tree = listToTree [4,1,2,3]
+drawPicture 3 $ renderTree tree
+
+
+
+
+
+
+drawPicture 3 $ renderTree $ deleteTree 4 tree
+
+
+
+
+
+
+drawPicture 3 $ renderTree $ deleteTree 2 tree
+
+
+
+
+
+
+
+
+drawPicture 3 $ renderTree $ deleteTree 1 tree
+
+
+
+
+
+
+
+
+drawPicture 3 $ renderTree $ deleteTree 3 tree
+
+
+
+
+
+
+
