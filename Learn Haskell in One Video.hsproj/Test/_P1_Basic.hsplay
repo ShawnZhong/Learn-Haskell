@@ -1,0 +1,46 @@
+-- Haskell Playground 1.0
+-- Data Types
+always5
+maxInt
+minInt
+
+integer
+
+bigFloat
+bigDouble
+
+always5
+
+
+
+
+
+
+
+-- Math
+sumOfNums
+addEx
+subEx
+multEx
+divEx
+modEx
+modEx'
+
+sqrtOf9
+
+piVal
+ePow9
+logOf9
+sqrtOf9
+truncateVal
+roundVal
+ceilinVal
+floorVal
+
+
+
+
+-- Logic
+trueAndFalse
+trueOrFalse
+notTrue
