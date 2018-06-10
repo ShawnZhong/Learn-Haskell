@@ -13,7 +13,9 @@ executable LearnHaskell
         base -any
     default-language: Haskell2010
     other-modules:
+        P6_Higher_Order_Function
         P2_List
         P3_List_and_Tuple
+        P5_Function
         P4_Function
 

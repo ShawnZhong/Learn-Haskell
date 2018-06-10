@@ -1,0 +1,20 @@
+-- Haskell Playground 1.0
+isOdd 10
+isOdd 1
+
+isEven 10
+
+
+whatGrade 10
+whatGrade 99
+
+batAvgRating 20 100
+batAvgRating 30 100
+
+getListItems []
+getListItems [1]
+getListItems [1,2]
+getListItems [1,2,3,4]
+
+getFirstItem ""
+getFirstItem "Shawn"

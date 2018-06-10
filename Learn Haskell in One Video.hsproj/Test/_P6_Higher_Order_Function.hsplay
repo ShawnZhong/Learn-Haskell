@@ -1,0 +1,4 @@
+-- Haskell Playground 1.0
+listTimes4
+
+multBy4 [1,2,3,4,5]
