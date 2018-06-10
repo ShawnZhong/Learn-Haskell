@@ -1,4 +1,4 @@
-module P9 where
+module P9_IO where
 
 import System.IO
 

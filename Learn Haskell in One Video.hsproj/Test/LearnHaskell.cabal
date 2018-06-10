@@ -14,11 +14,11 @@ executable LearnHaskell
     default-language: Haskell2010
     other-modules:
         P8_Type_Classes
+        P9_IO
         P7_Data
         P2_List
         P3_List_and_Tuple
         P4_Function_Basic
         P6_Higher_Order_Function
-        P9
         P5_Guard_Where_and_Patten_Matching
 
