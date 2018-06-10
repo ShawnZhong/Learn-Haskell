@@ -1,0 +1,14 @@
+-- Haskell Playground 1.0
+barryBonds Outfield
+
+getBalance tomSmith
+
+shoot Paper Rock
+
+area (Circle 50 60 20)
+area $ Rectangle 0 0 1 10
+
+
+sumVal
+sumVal'
+

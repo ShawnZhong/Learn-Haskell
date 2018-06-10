@@ -2,3 +2,21 @@
 listTimes4
 
 multBy4 [1,2,3,4,5]
+
+areStringsEq "Shawn" "Shawn"
+areStringsEq "Shawn" "Zhong"
+
+num3Times4
+
+num4Plus3
+
+
+threePlusList
+
+dbl1To10
+
+doubleEvenNumber 2
+doubleEvenNumber 1
+
+getClass 1
+getClass 5

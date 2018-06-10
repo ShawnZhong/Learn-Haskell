@@ -1,4 +1,4 @@
-module P4_Function where
+module P4_Function_Basic where
 
 main = do                         -- do chain a bunch of commands 
   putStrLn "What's you name"

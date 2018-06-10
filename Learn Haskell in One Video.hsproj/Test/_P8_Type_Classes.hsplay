@@ -1,0 +1,11 @@
+-- Haskell Playground 1.0
+samSimith == shawnZhong
+
+show samSimith
+
+
+S `elem` [S, M, L]
+
+show S
+
+areEqual M M
