@@ -1,0 +1,17 @@
+-- Haskell Playground 1.0
+-- main
+-- getLine is not working in playground
+
+
+addMe 2 3
+
+sumMe 2.3 5.4
+
+addTuples (1, 2) (3 ,4)
+
+
+whatAge 16
+whatAge 21
+whatAge 99
+
+factorial 10

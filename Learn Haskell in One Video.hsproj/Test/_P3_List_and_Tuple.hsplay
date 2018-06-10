@@ -1,0 +1,45 @@
+-- Haskell Playground 1.0
+-- List
+zeroToTen
+evenList
+letterList
+--infinPow10
+
+many2s
+many3s
+cycleList
+
+
+listTimes2
+listTimes3
+divisiBy9N13
+
+sortedList
+
+sumOfLists
+
+filteredList
+
+evensUpTo20
+
+multOfList
+multOfList'
+
+pow3List
+
+multTable
+
+
+
+
+
+
+-- Tuple
+randTuple
+
+bobSmith
+
+bobsName
+bobsAge
+
+namesNAddress
