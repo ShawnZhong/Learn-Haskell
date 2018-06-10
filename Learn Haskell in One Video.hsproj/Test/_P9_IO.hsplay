@@ -1,5 +1,8 @@
 -- Haskell Playground 1.0
 
---writeToFile
+writeToFile
 
---readFromFile
+readFromFile
+
+
+fib !! 200
