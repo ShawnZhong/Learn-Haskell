@@ -1,5 +1,16 @@
 -- Haskell Playground 1.0
+import Codec.Picture
 drawPicture 3 $ bluePolygons ((470,780), (370,780)) 22
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,9 +33,6 @@ drawPicture 3 (fadedFTree 14 0.55 red line)
 
 
 
-
-
-drawPicture 3 (bleachedFTree 14 0.55 red line)
 
 
 
@@ -51,7 +59,26 @@ drawPicture 3 (bleachedFTree 14 0.55 green line)
 
 
 
+
+
+
+
+
+
+
+
 drawPicture 3 (colouredFTree 14 (toggleFactor2 0.7) magentaToWhite ((470,780), (370,780)))
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -64,6 +91,22 @@ drawPicture 3 (colouredFTree 14 (toggleFactor2 0.7) magentaToWhite ((470,780), (
 -- Passing in constant function
 --drawPicture 3 (colouredFTree 14 (\_ -> 0.5) (\_ -> red) ((470,780), (370,780))) 
 drawPicture 3 (colouredFTree 14 (const 0.5) (const red) ((470,780), (370,780))) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

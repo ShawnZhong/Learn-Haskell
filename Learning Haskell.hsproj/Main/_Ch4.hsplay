@@ -1,7 +1,5 @@
 -- Haskell Playground 1.0
-import Graphics.SpriteKit hiding (Point, Vector, Line, Path)
-
-
+import Codec.Picture
 let house = [(300, 750), (300, 450), (270, 450), (500, 200),
         (730, 450), (700, 450), (700, 750)] :: Path
 let door = [(420, 750), (420, 550), (580, 550), (580, 750)] :: Path
@@ -81,9 +79,8 @@ drawPicture 3 [(red, spiral (pi + 0.1) 1.04 180 myLine)]
 
 
 
-
-drawPicture 3 [(blue, kochFlake 7 ((400,50), (700,550)))]
-
+pic = [(blue, kochFlake 7 ((400,50), (700,550)))]
+drawPicture 3 pic
 
 
 
