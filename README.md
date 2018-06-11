@@ -28,4 +28,6 @@ Cornerstones of Functional Programming
 Notes on [Learn Haskell in One Video](https://youtu.be/02_H3LjqMr8) by [Derek Banas
 ](https://www.youtube.com/channel/UCwRXb5dUK4cvsHbx-rGzSgw)
 
-Covered Topics: Installation, Data Types, Math Functions, :t, Lists, : Operator, Head / Tail, !! Operator, Take, Elem, Creating Ranges, Cycle, Filter, ZipWith, TakeWhile, Foldl, List Comprehensions, Tuples, Zip, Functions, Compiling, Type Declarations, Recursive Functions, Guards, Where, (x:y), As, Higher Order Functions, Map, (x:xs), Passing a Function into a Function, Returning a Function, Lambda, If, Case, Modules, Enumerations, Polymorphic Types, $ Operator, . Operator, Type Classes, Type Instance, Custom Typeclass, File I/O, Fibonacci Sequence and more.
+**Covered Topics**
+
+Installation, Data Types, Math Functions, :t, Lists, : Operator, Head / Tail, !! Operator, Take, Elem, Creating Ranges, Cycle, Filter, ZipWith, TakeWhile, Foldl, List Comprehensions, Tuples, Zip, Functions, Compiling, Type Declarations, Recursive Functions, Guards, Where, (x:y), As, Higher Order Functions, Map, (x:xs), Passing a Function into a Function, Returning a Function, Lambda, If, Case, Modules, Enumerations, Polymorphic Types, $ Operator, . Operator, Type Classes, Type Instance, Custom Typeclass, File I/O, Fibonacci Sequence and more.
