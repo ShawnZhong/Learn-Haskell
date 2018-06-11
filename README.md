@@ -22,8 +22,6 @@ Cornerstones of Functional Programming
 7. [More About Algebraic Data Types](http://learn.hfm.io/recursive_datatypes.html)
 8. [Expression Trees](http://learn.hfm.io/expressions.html)
 
-![Screenshot](Learning-Haskell.png)
-
 # Learn Haskell in One Video.hsproj
 Notes on [Learn Haskell in One Video](https://youtu.be/02_H3LjqMr8) by [Derek Banas
 ](https://www.youtube.com/channel/UCwRXb5dUK4cvsHbx-rGzSgw)
@@ -31,3 +29,6 @@ Notes on [Learn Haskell in One Video](https://youtu.be/02_H3LjqMr8) by [Derek Ba
 **Covered Topics**
 
 Installation, Data Types, Math Functions, :t, Lists, : Operator, Head / Tail, !! Operator, Take, Elem, Creating Ranges, Cycle, Filter, ZipWith, TakeWhile, Foldl, List Comprehensions, Tuples, Zip, Functions, Compiling, Type Declarations, Recursive Functions, Guards, Where, (x:y), As, Higher Order Functions, Map, (x:xs), Passing a Function into a Function, Returning a Function, Lambda, If, Case, Modules, Enumerations, Polymorphic Types, $ Operator, . Operator, Type Classes, Type Instance, Custom Typeclass, File I/O, Fibonacci Sequence and more.
+
+![Screenshot1](Screenshot1.png)
+![Screenshot2](Screenshot2.png)
