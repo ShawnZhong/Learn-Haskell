@@ -1,8 +1,9 @@
-# Learning Haskell @ [learn.hfm.io](http://learn.hfm.io/)
+You can use [Haskell for Mac](http://store.haskellformac.com/) to open .hsproj files
+
+# Learning Haskell.hsproj
 
 Notes on [Learning Haskell](http://learn.hfm.io/) by [Gabriele Keller](https://twitter.com/gckeller) and [Manuel M T Chakravarty](https://twitter.com/TacticalGrace).
 
-You can use [Haskell for Mac](http://store.haskellformac.com/) to open .hsproj files
 
 **Table of Contents**
 
@@ -22,3 +23,9 @@ Cornerstones of Functional Programming
 8. [Expression Trees](http://learn.hfm.io/expressions.html)
 
 ![Screenshot](Learning-Haskell.png)
+
+# Learn Haskell in One Video.hsproj
+Notes on [Learn Haskell in One Video](https://youtu.be/02_H3LjqMr8) by [Derek Banas
+](https://www.youtube.com/channel/UCwRXb5dUK4cvsHbx-rGzSgw)
+
+Covered Topics: Installation, Data Types, Math Functions, :t, Lists, : Operator, Head / Tail, !! Operator, Take, Elem, Creating Ranges, Cycle, Filter, ZipWith, TakeWhile, Foldl, List Comprehensions, Tuples, Zip, Functions, Compiling, Type Declarations, Recursive Functions, Guards, Where, (x:y), As, Higher Order Functions, Map, (x:xs), Passing a Function into a Function, Returning a Function, Lambda, If, Case, Modules, Enumerations, Polymorphic Types, $ Operator, . Operator, Type Classes, Type Instance, Custom Typeclass, File I/O, Fibonacci Sequence and more.
